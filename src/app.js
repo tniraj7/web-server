@@ -4,7 +4,27 @@ const path = require('path')
 const publicDirectory = path.join(__dirname, '../public')
 
 const app = express()
+app.set('view engine', 'hbs')
 app.use(express.static(publicDirectory))
+app.get('', (req,res) => {
+    res.render('index', {
+      title: 'Weather App',
+      name: 'Niraj'
+    })
+})
+
+app.get('/about', (req, res) =>{
+  res.render('about', {
+    title: 'About me',
+    name: 'Niraj'
+  })
+})
+
+app.get('/help', (req, res) =>{
+  res.render('help', {
+    helpText: 'How may I help you ?'
+  })
+})
 
 const port = 3000;
 
