@@ -39,6 +39,14 @@ app.get('/help', (req, res) => {
   })
 })
 
+app.get('/help/*', (req, res) => {
+  res.render('error404', {
+    errorType: '404',
+    errorMessage: "Help article Not Found",
+    name: 'Niraj'
+  })
+})
+
 const port = 3000;
 
 app.get('/', (req, res) => {
@@ -51,6 +59,16 @@ app.get('/weather', (req, res) => {
     min_temp: '7',
     max_temp: '12'
   })
+})
+
+
+app.get('*', (req, res) => {
+  res.render('error404', {
+      errorType: '404',
+      errorMessage: "Page Not Found",
+      name: 'Niraj'
+  })
+
 })
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`)
