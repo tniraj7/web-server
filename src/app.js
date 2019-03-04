@@ -1,9 +1,10 @@
 const express = require('express')
+const hbs = require('hbs')
 const path = require('path')
 
 //Paths for Express config
 const publicDirectory = path.join(__dirname, '../public')
-const viewsPath = path.join(__dirname, '../templates')
+const viewsPath = path.join(__dirname, '../templates/views')
 
 const app = express()
 
