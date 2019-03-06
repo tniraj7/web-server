@@ -34,7 +34,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     helpText: 'How may I help you ?',
-    title: 'help',
+    title: 'Help',
     name: 'Niraj'
   })
 })
@@ -54,13 +54,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+  if(!req.query.city) {
+    return res.send({
+        error: 'You must provide with the city name'
+    }) 
+  }
   res.send({
-    city: 'Tokyo',
+    city: req.query.city,
     min_temp: '7',
     max_temp: '12'
   })
 })
-
 
 app.get('*', (req, res) => {
   res.render('error404', {
