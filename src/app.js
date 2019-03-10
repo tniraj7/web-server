@@ -11,6 +11,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 const API_KEY = '1bf7b4bd00bd3c84b2ca2d73fa0ddcd3'
 
+
 const app = express()
 
 //Setup handlebars engine and views location
@@ -74,6 +75,9 @@ app.get('/weather', (req, res) => {
   })
     .catch((e) => {
       console.log(e)
+      res.send({
+        e
+      })
     })
 })
 
