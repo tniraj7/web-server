@@ -1,8 +1,9 @@
 const request = require("request")
+const math = require('mathjs')
 
 const getWeather = (url, city = "city", key) => {
   var URL = url + `q=${city}` + `&appid=${key}`;
-  
+
   return new Promise((resolve, reject) => {
     request(
       {
@@ -15,8 +16,8 @@ const getWeather = (url, city = "city", key) => {
         } else if (response) {
           if (response.statusCode === 200) {
             resolve({
-              maxTemp: body.main.temp_max - 273.15,
-              minTemp: body.main.temp_min - 273.15
+              maxTemp: math.round(body.main.temp_max - 273.15),
+              minTemp: math.round(body.main.temp_min - 273.15)
             });
           }
         }
