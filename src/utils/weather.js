@@ -15,7 +15,6 @@ const getWeather = (url, city = "city", key, callback) => {
       } else if (response.body.cod !== 200) {
         callback(
           {
-            code: response.body.cod,
             message: response.body.message
           },
           undefined
