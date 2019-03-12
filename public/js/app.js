@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
     fetch(url).then( (response) => {
         response.json().then((data) => {
             if (data.error) {
-                msg1.textContent = data.error
+                msg1.textContent = data.error.message
             } else {
                 msg1.textContent = `City : ${data.city}`
                 msg2.textContent = `Minimmum temperature is : ${data.minTemp}.` + '\n' + ` Maximum temperature is : ${data.maxTemp}.` + '\n' + ` Wind Speed is : ${data.windspeed}.`
