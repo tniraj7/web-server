@@ -1,0 +1,7 @@
+{
+  "name": "Weather Appp",
+  "description": "A  Node.js app using Express 4",
+  "repository": "https://github.com/tniraj7/web-server.git",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "handlebars", "mustache"]
+}
