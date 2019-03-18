@@ -2,6 +2,6 @@
   "name": "Weather Appp",
   "description": "A  Node.js app using Express 4",
   "repository": "https://github.com/tniraj7/web-server.git",
-  "logo": "./public/img/node.png",
+  "logo": "node.png",
   "keywords": ["node", "express", "handlebars", "mustache"]
 }
